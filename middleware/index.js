@@ -17,6 +17,7 @@ middlewareObj.checkCampgroundOwnership = function(req, res, next){
             }
         });
     }else{
+        req.flash("warning", "You didn't created it, so you can't edit or delete it");
         res.redirect("back");
     }
 };
@@ -35,13 +36,16 @@ middlewareObj.checkCommentOwnership = function(req, res, next){
             }
         });
     }else{
+        req.flash("warning", "You didn't created it, so you can't edit or delete it");
         res.redirect("back");
     }
 };
 middlewareObj.isLoggedIn = function(req, res, next){
     if(req.isAuthenticated()){
+        req.flash("success", "you are logged in");
         return next();
     }
+    req.flash("warning", "you are not logged in");
     res.redirect("/login");
 };
 

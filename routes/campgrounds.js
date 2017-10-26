@@ -34,6 +34,7 @@ router.post("/", middlewareObj.isLoggedIn,function(req, res){
     else{
         res.redirect("/campgrounds");
     }
+    
 })
 });
 router.get("/new",middlewareObj.isLoggedIn, function(req, res){

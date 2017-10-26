@@ -31,4 +31,11 @@
     
   </div>
 </nav> 
+<% if(warning && warning.length){%>
+        <div class="container alert alert-warning"> 
+        <%=warning%> </div>
+        <% };%>
+        <%if(success && success.length){%>
+<div class="container alert alert-success"> <%=success%> </div>
+        <% };%>
         <div class="container">
